@@ -1,0 +1,75 @@
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__wrap {
+    margin-left: 16px;
+    margin-right: 16px;
+
+    @media (min-width: $screen-tablet) {
+      margin-left: 24px;
+      flex-basis: 50%;
+    }
+
+    @media (min-width: $screen-desktop) {
+      margin-left: 34px;
+    }
+  }
+
+  &__text {
+    height: 90px;
+    overflow-y: hidden;
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-tablet) {
+      height: 160px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 16px;
+    font-size: $font-size-paragraph;
+    line-height: $line-height-paragraph;
+    letter-spacing: $letter-spacing-paragraph;
+
+    @media (min-width: $screen-tablet) {
+      line-height: $line-height-paragraph + 2;
+    }
+  }
+
+  &__button {
+    border: none;
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    background: transparent;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      background-image: url("../img/down_arrows.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      display: block;
+      height: 16px;
+      width: 16px;
+      position: relative;
+      float: left;
+      margin-right: 16px;
+      top: 3px;
+    }
+  }
+
+  &__image {
+    min-height: 176px;
+    max-height: 307px;
+    max-width: 531px;
+    flex-grow: 1;
+
+    @media (min-width: $screen-tablet) {
+      border-radius: 6px;
+    }
+  }
+}

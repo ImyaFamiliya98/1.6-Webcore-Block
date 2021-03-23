@@ -1,0 +1,12 @@
+.content-wrap {
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 42px;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+  }
+}

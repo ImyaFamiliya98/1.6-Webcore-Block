@@ -1,0 +1,146 @@
+.header {
+  height: 88px;
+  background-color: $background-color-header;
+  border-bottom: 1px solid $header-border-color;
+
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
+
+  &__container {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    &--side--left {
+      margin-left: 16px;
+      justify-content: space-between;
+      width: 170px;
+
+      @media (min-width: $screen-mobile + 40) {
+          margin-left: 24px;
+      }
+
+      &::after {
+        content: '';
+        display: none;
+        width: 2px;
+        height: 32px;
+        background-color: $divider-color;
+
+        @media (min-width: $screen-mobile) {
+          display: block;
+        }
+
+        @media (min-width: $screen-tablet) {
+          order: 1;
+        }
+      }
+    }
+
+    &--side--right {
+      margin-right: 16px;
+      justify-content: space-between;
+      width: 100px;
+
+      @media (min-width: $screen-mobile + 40) {
+          margin-right: 24px;
+      }
+
+      @media (min-width: $screen-tablet) {
+          width: 290px;
+      }
+
+      &::after {
+        content: '';
+        display: none;
+        width: 2px;
+        height: 32px;
+        background-color: $divider-color;
+        order: 1;
+
+        @media (min-width: $screen-tablet) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__cps-logo {
+    background: url("../img/logo.png") no-repeat;
+    width: 97px;
+    height: 51px;
+
+    @media (min-width: $screen-tablet) {
+      order: 2;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: $icon-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icon--burger {
+    background-image: url('../img/burger.png');
+  }
+
+  &__icon--call {
+    background-image: url('../img/call.png');
+    display: none;
+
+    @media (min-width: $screen-tablet) {
+      display: block;
+    }
+  }
+
+  &__icon--chat {
+    background-image: url('../img/chat.png');
+    display: none;
+
+    @media (min-width: $screen-tablet) {
+      display: block;
+    }
+  }
+
+  &__icon--profile {
+    background-image: url('../img/profile.png');
+    display: none;
+
+    @media (min-width: $screen-tablet) {
+      display: block;
+    }
+  }
+
+  &__icon--repair {
+    background-image: url('../img/repair.svg');
+
+    @media (min-width: $screen-tablet) {
+      order: 2;
+    }
+  }
+
+  &__icon--checkstatus {
+    background-image: url('../img/checkstatus.svg');
+
+    @media (min-width: $screen-tablet) {
+      order: 3;
+    }
+  }
+}

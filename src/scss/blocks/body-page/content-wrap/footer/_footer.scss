@@ -1,0 +1,40 @@
+.footer {
+  padding: 0 16px 16px 16px;
+  border-top: 1px solid $divider-color;
+
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__text {
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    color: $text-color--muted;
+    font-size: $font-size-paragraph;
+    line-height: $line-height-paragraph - 2;
+    text-align: center;
+    margin-top: 16px;
+
+    @media (min-width: $screen-tablet) {
+      margin-top: 32px;
+    }
+  }
+
+  &__copyright {
+    @media (min-width: $screen-tablet) {
+      text-align: left;
+      flex-basis: 33%;
+    }
+  }
+
+  &__public-offer {
+    @media (min-width: $screen-tablet) {
+      text-align: right;
+      flex-basis: 33%;
+    }
+  }
+}

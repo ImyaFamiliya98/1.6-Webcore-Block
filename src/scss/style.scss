@@ -1,0 +1,36 @@
+@import "_variables";
+@import "_standart";
+@import "swiper-bundle-min.css";
+
+// page
+@import "blocks/body-page/_body-page";
+
+//modal
+@import "blocks/body-page/modal-call/_modal-call";
+@import "blocks/body-page/modal-feedback/_modal-feedback";
+
+//mobile menu
+@import "blocks/body-page/mobile-menu/_mobile-menu.scss";
+@import "blocks/body-page/mobile-menu/navigation/_navigation";
+@import "blocks/body-page/mobile-menu/contacts/_contacts";
+
+//content
+@import "blocks/body-page/content-wrap/_content-wrap";
+
+//header
+@import "blocks/body-page/content-wrap/header/_header";
+
+//main
+@import "blocks/body-page/content-wrap/main/_main";
+@import "blocks/body-page/content-wrap/main/caption/_caption";
+@import "blocks/body-page/content-wrap/main/menu/_menu";
+@import "blocks/body-page/content-wrap/main/description/_description";
+@import "blocks/body-page/content-wrap/main/brand/_brand";
+@import "blocks/body-page/content-wrap/main/device/_device";
+@import "blocks/body-page/content-wrap/main/price/_price";
+
+//footer
+@import "blocks/body-page/content-wrap/footer/_footer";
+
+//blur effect
+@import "blocks/body-page/blur-effect/_blur-effect";

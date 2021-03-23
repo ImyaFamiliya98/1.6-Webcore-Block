@@ -1,0 +1,61 @@
+.contacts {
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__icons {
+    margin-top: 22px;
+    margin-left: 24px;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: $icon-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 16px;
+
+    &--call {
+      background-image: url('../img/call.png');
+    }
+
+    &--chat {
+      background-image: url('../img/chat.png');
+    }
+
+    &--profile {
+      background-image: url('../img/profile.png');
+    }
+  }
+
+  &__mail {
+    margin-top: 16px;
+    margin-left: 24px;
+  }
+
+  &__mail-link {
+    text-decoration: none;
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+  }
+
+  &__number {
+    margin-left: 24px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $font-weight-bold;
+    margin-top: 10px;
+    font-family: $font-family-bold;
+    letter-spacing: -0.6px;
+  }
+
+  &__number-link {
+    text-decoration: none;
+    color: $text-color;
+  }
+}

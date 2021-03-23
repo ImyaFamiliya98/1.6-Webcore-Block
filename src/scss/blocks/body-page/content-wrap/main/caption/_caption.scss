@@ -1,0 +1,87 @@
+.caption {
+
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
+    font-family: $font-family-bold;
+    letter-spacing: $letter-spacing-h1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 40px;
+      background-image: url('../img/highlight.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__buttons {
+    display: none;
+
+    @media (min-width: $screen-desktop) {
+      display: flex;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    @media (min-width: $screen-desktop) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__button + &__button {
+    margin-left: 32px;
+  }
+
+  &__link {
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    background: linear-gradient(to bottom, #ff9800 0%, #ff9800 100%);
+    background-position: 0 100%;
+    background-size: 0 0;
+    background-repeat: repeat-x;
+    transition: all 0.2s;
+
+    @media (min-width: $screen-desktop) {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      text-decoration: none;
+      color: $text-color;
+    }
+
+    &:hover {
+      background-size: 4px 100%;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: $icon-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 8px;
+  }
+
+  &__icon--repair {
+    background-image: url('../img/repair.svg');
+  }
+
+  &__icon--checkstatus {
+    background-image: url('../img/checkstatus.svg');
+  }
+}

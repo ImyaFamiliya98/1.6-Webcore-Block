@@ -1,0 +1,38 @@
+.navigation {
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-left: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    line-height: 32px;
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+
+    &--active {
+      color: $text-color--muted;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 32px;
+        background: url("../img/highlight_2.png") no-repeat;
+      }
+    }
+
+    &:hover {
+
+    }
+  }
+}

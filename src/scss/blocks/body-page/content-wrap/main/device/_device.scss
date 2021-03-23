@@ -1,0 +1,188 @@
+.device {
+  background-color: $background-color-main;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
+    height: 80px;
+    border-top: 1px solid $header-border-color;
+  }
+
+  &__header-text {
+    font-family: $font-family-regular;
+    font-size: $font-size-regular;
+    line-height: $line-height-regular;
+    letter-spacing: $letter-spacing-regular;
+    text-transform: uppercase;
+    color: $text-color;
+    margin: 16px;
+
+    @media (min-width: $screen-tablet) {
+      margin-left: 24px;
+    }
+
+    @media (min-width: $screen-desktop) {
+      margin-left: 32px;
+    }
+  }
+
+  &__container {
+    padding-left: 16px;
+    position: relative;
+
+    @media (min-width: $screen-tablet) {
+      padding-left: 24px;
+    }
+
+    @media (min-width: $screen-desktop) {
+      padding-left: 32px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 166px;
+      background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+      top: 0;
+      right: -5px;
+      z-index: 10;
+
+      @media (min-width: $screen-tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    @media (min-width: $screen-tablet) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__wrapper--cut {
+    max-height: 184px;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    height: 168px;
+    width: 240px;
+
+    @media (min-width: $screen-tablet) {
+      width: 224px;
+    }
+
+    @media (min-width: $screen-desktop) {
+      width: 240px;
+    }
+  }
+
+  &__slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    height: 160px;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background-color: white;
+    text-decoration: none;
+    color: $text-color;
+
+    @media (min-width: $screen-tablet) {
+      width: 224px;
+    }
+
+    @media (min-width: $screen-desktop) {
+      width: 240px;
+    }
+  }
+
+  &__slide-text {
+    align-self: flex-start;
+    margin: 16px;
+    font-family: $font-family-medium;
+  }
+
+  &__slide-go {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/go.png');
+    border-radius: 50%;
+    margin: 16px;
+    align-self: flex-end;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__pagination {
+    bottom: 0;
+    position: static;
+    margin-top: 16px;
+
+    @media (min-width: $screen-tablet) {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #DDDDDD;
+      margin: 0 6px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #B5B6BC;
+    }
+  }
+
+  &__button {
+    border: none;
+    display: none;
+    font-family: $font-family-medium;
+    font-weight: $font-weight-medium;
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-bottom: 50px;
+    background: transparent;
+    cursor: pointer;
+
+    @media (min-width: $screen-tablet) {
+      display: inline-block;
+    }
+
+    @media (min-width: $screen-desktop) {
+      margin-left: 39px;
+    }
+
+    &::before {
+      content: '';
+      background: url("../img/down_arrows.png") no-repeat center center;
+      display: block;
+      height: 16px;
+      width: 16px;
+      position: relative;
+      float: left;
+      margin-right: 16px;
+      top: 3px;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__button--hide {
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+}
