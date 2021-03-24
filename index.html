@@ -85,20 +85,24 @@
             </div>
           </div>
         </div>
-        <div class="main__menu-wrap main__wrap main__wrap--centered">
+        <div class="main__menu-wrap">
           <ul class="main__menu-limiter menu">
-            <li class="menu__item"><a href="#" class="menu__link">Ремонтируемые бренды</a></li>
-            <li class="menu__item menu__item--active"><a href="#" class="menu__link">Ремонтируемые устройства</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Цены на услуги</a></li>
+            <li class="menu__item menu__item--active"><a href="#brands" class="menu__link">Ремонтируемые бренды</a></li>
+            <li class="menu__item"><a href="#devices" class="menu__link">Ремонтируемые устройства</a></li>
+            <li class="menu__item"><a href="#prices" class="menu__link">Цены на услуги</a></li>
             <li class="menu__item"><a href="#" class="menu__link">Адреса сервисных центров</a></li>
             <li class="menu__item"><a href="#" class="menu__link">Специальные цены</a></li>
             <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
           </ul>
         </div>
-        <section class="main__content main__wrap main__wrap--centered">
+        <section class="main__content">
           <div class="description">
             <div class="description__wrap">
-              <div class="description__text">
+              <div class="description__text description__text--cut">
+                <p class="description__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
+                <p class="description__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным
+                  и близким.
+                </p>
                 <p class="description__paragraph">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</p>
                 <p class="description__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным
                   и близким.
@@ -106,14 +110,15 @@
               </div>
               <button class="description__button" type="button">Читать далее</button>
             </div>
-            <img src="./img/contentImage.png" class="description__image" alt="">
+            <div class="description__image-wrap">
+              <img src="./img/contentImage.png" class="description__image" alt="">
+            </div>
           </div>
         </section>
-        <div class="brand">
+        <div class="brand" id="brands">
           <div class="brand__header">
             <h2 class="brand__header-text">Ремонт техники различных брендов</h2>
           </div>
-          <div class="main__wrap main__wrap--centered">
             <div class="swiper-container brand__container">
               <div class="swiper-wrapper brand__wrapper brand__wrapper--cut">
                 <div class="swiper-slide brand__slide">
@@ -186,13 +191,11 @@
               <div class="swiper-pagination brand__pagination"></div>
             </div>
             <button type="button" id="brand__button" class="brand__button brand__button--show">Показать все</button>
-          </div>
         </div>
-        <div class="device">
+        <div class="device" id="devices">
           <div class="device__header">
             <h2 class="device__header-text">Ремонт различных видов техники</h2>
           </div>
-          <div class="main__wrap main__wrap--centered">
             <div class="swiper-container device__container">
               <div class="swiper-wrapper device__wrapper device__wrapper--cut">
                 <div class="swiper-slide device__slide">
@@ -229,13 +232,12 @@
               <div class="swiper-pagination device__pagination"></div>
             </div>
             <button type="button" class="device__button device__button--show">Показать все</button>
-          </div>
         </div>
-        <div class="price">
+        <div class="price" id="prices">
           <div class="price__header">
             <h2 class="price__header-text">цены на услуги</h2>
           </div>
-          <div class="swiper-container price__container main__wrap main__wrap--centered">
+          <div class="swiper-container price__container">
             <div class="swiper-wrapper price__wrapper price__wrapper--cut">
               <div class="swiper-slide price__slide">
                 <ul class="price__slide-content">
@@ -340,7 +342,7 @@
       <h2 class="modal-call__caption">Заказать звонок</h2>
       <form action="" class="modal-call__form">
         <input type="tel" class="modal-call__form-input" placeholder="Телефон">
-        <p class="modal-call__form-text">Нажимая “отправить”, вы даете согласие на <span class="modal-call-important">обработку персональных данных</span> и соглашаетесь с нашей <span class="modal-call-important">политикой конфиденциальности</span></p>
+        <p class="modal-call__form-text">Нажимая “отправить”, вы даете согласие на <a href="#" class="modal-call-important">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="modal-call-important">политикой конфиденциальности</a></p>
         <button class="modal-call__form-submit" type="submit">Отправить</button>
       </form>
     </div>
@@ -352,7 +354,7 @@
         <input type="tel" class="modal-feedback__form-input" placeholder="Телефон">
         <input type="email" class="modal-feedback__form-input" placeholder="Электронная почта">
         <textarea class="modal-feedback__form-input-message" placeholder="Сообщение"></textarea>
-        <p class="modal-feedback__form-text">Нажимая “отправить”, вы даете согласие на <span class="modal-feedback-important">обработку персональных данных</span> и соглашаетесь с нашей <span class="modal-feedback-important">политикой конфиденциальности</span></p>
+        <p class="modal-feedback__form-text">Нажимая “отправить”, вы даете согласие на <a href="#" class="modal-feedback-important">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="modal-feedback-important">политикой конфиденциальности</a></p>
         <button type="submit" class="modal-feedback__form-submit">Отправить</button>
       </form>
     </div>

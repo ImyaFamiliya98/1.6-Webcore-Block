@@ -53,15 +53,13 @@ html {
   font-family: "TT Lakes Regular", "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -0.2px; }
+  letter-spacing: -0.2px;
+  max-width: 1440px; }
   @media (min-width: 1440px) {
     .body-page {
-      display: flex; } }
-  @media (min-width: 1440px) {
-    .body-page__wrap {
+      display: flex;
       margin-left: auto;
-      margin-right: auto;
-      max-width: 1120px; } }
+      margin-right: auto; } }
 
 .modal-call {
   position: fixed;
@@ -73,12 +71,17 @@ html {
   width: 320px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
-  transition: all 0.3s; }
+  z-index: 11;
+  transition: all 0.3s;
+  overflow-y: scroll; }
+  @media (min-width: 768px) {
+    .modal-call {
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02); } }
   @media (min-width: 1440px) {
     .modal-call {
       padding: 40px 32px;
-      width: 440px; } }
+      width: 440px;
+      overflow-y: auto; } }
   .modal-call--hidden {
     transform: translateX(320px);
     visibility: hidden; }
@@ -101,6 +104,8 @@ html {
         margin-bottom: 0;
         position: absolute;
         transform: translate(-105px, -5px); } }
+    .modal-call__icon:hover {
+      transform: scale(1.1); }
     .modal-call__icon--exit {
       background-image: url(./static/exit.png); }
   .modal-call__caption {
@@ -129,6 +134,11 @@ html {
     padding: 12px 16px;
     width: 100%;
     margin-bottom: 16px; }
+    .modal-call__form-input:hover {
+      box-shadow: 0 0 2px 1px #007aff; }
+    .modal-call__form-input:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #1868ae; }
   .modal-call__form-text {
     font-family: "TT Lakes Medium", "Arial", sans-serif;
     font-weight: 500;
@@ -153,8 +163,7 @@ html {
     display: flex;
     transition: all 0.3s;
     cursor: pointer;
-    margin-left: auto;
-    transition: all 0.3s; }
+    margin-left: auto; }
     .modal-call__form-submit:hover {
       filter: brightness(120%); }
     .modal-call__form-submit::after {
@@ -168,7 +177,11 @@ html {
       background-position: center center;
       margin-left: 8px; }
   .modal-call-important {
-    color: #FF3E79; }
+    color: #FF3E79;
+    text-decoration: none;
+    transition: all 0.3s; }
+    .modal-call-important:hover {
+      opacity: 0.8; }
 
 .modal-feedback {
   position: fixed;
@@ -180,12 +193,17 @@ html {
   width: 320px;
   display: flex;
   flex-direction: column;
-  z-index: 10;
-  transition: all 0.3s; }
+  z-index: 11;
+  transition: all 0.3s;
+  overflow-y: scroll; }
+  @media (min-width: 768px) {
+    .modal-feedback {
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02); } }
   @media (min-width: 1440px) {
     .modal-feedback {
       padding: 40px 32px;
-      width: 440px; } }
+      width: 440px;
+      overflow-y: auto; } }
   .modal-feedback--hidden {
     transform: translateX(320px);
     visibility: hidden; }
@@ -238,6 +256,11 @@ html {
     padding: 12px 16px;
     width: 100%;
     margin-bottom: 16px; }
+    .modal-feedback__form-input:hover {
+      box-shadow: 0 0 2px 1px #007aff; }
+    .modal-feedback__form-input:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #1868ae; }
   .modal-feedback__form-input-message {
     background: #FFFFFF;
     border: 1px solid #EAEAEA;
@@ -247,6 +270,11 @@ html {
     height: 118px;
     margin-bottom: 16px;
     resize: none; }
+    .modal-feedback__form-input-message:hover {
+      box-shadow: 0 0 2px 1px #007aff; }
+    .modal-feedback__form-input-message:focus {
+      outline: none;
+      box-shadow: 0 0 2px 1px #1868ae; }
   .modal-feedback__form-text {
     font-family: "TT Lakes Medium", "Arial", sans-serif;
     font-weight: 500;
@@ -271,8 +299,7 @@ html {
     display: flex;
     transition: all 0.3s;
     cursor: pointer;
-    margin-left: auto;
-    transition: all 0.3s; }
+    margin-left: auto; }
     .modal-feedback__form-submit:hover {
       filter: brightness(120%); }
     .modal-feedback__form-submit::after {
@@ -286,7 +313,11 @@ html {
       background-position: center center;
       margin-left: 8px; }
   .modal-feedback-important {
-    color: #FF3E79; }
+    color: #FF3E79;
+    text-decoration: none;
+    transition: all 0.3s; }
+    .modal-feedback-important:hover {
+      opacity: 0.8; }
 
 .mobile-menu {
   background: #FFFFFF;
@@ -303,9 +334,6 @@ html {
   @media (min-width: 320px) {
     .mobile-menu {
       box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02); } }
-  @media (min-height: 768px) {
-    .mobile-menu {
-      height: 100vh; } }
   @media (min-width: 1440px) {
     .mobile-menu {
       position: static;
@@ -341,7 +369,8 @@ html {
       background-color: #FF3E79;
       background-repeat: no-repeat;
       background-position: center center;
-      transition: all 0.3s; }
+      transition: all 0.3s;
+      cursor: pointer; }
       .mobile-menu__header-icon:hover {
         transform: scale(1.1); }
       .mobile-menu__header-icon--exit {
@@ -360,7 +389,10 @@ html {
   .mobile-menu__cps-logo {
     width: 97px;
     height: 51px;
+    transition: all 0.3s;
     background-image: url(./static/logo.png); }
+    .mobile-menu__cps-logo:hover {
+      transform: scale(0.9); }
   .mobile-menu__navigation {
     margin-top: 8px; }
   .mobile-menu__footer {
@@ -382,6 +414,8 @@ html {
     background-color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer; }
+    .mobile-menu__language-button:hover {
+      opacity: 0.8; }
     .mobile-menu__language-button--active {
       color: #7E7E82; }
     .mobile-menu__language-button:not(:last-child) {
@@ -410,6 +444,8 @@ html {
       width: 4px;
       height: 32px;
       background: url(./static/highlight_2.png) no-repeat; }
+  .navigation__link:hover {
+    opacity: 0.8; }
 
 .contacts__button {
   cursor: pointer; }
@@ -426,7 +462,11 @@ html {
   background-color: #FF3E79;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 16px; }
+  margin-right: 16px;
+  cursor: pointer;
+  transition: all 0.3s; }
+  .contacts__icon:hover {
+    transform: scale(1.1); }
   .contacts__icon--call {
     background-image: url(./static/call.png); }
   .contacts__icon--chat {
@@ -443,6 +483,8 @@ html {
   font-family: "TT Lakes Medium", "Arial", sans-serif;
   font-weight: 500;
   color: #1B1C21; }
+  .contacts__mail-link:hover {
+    opacity: 0.8; }
 
 .contacts__number {
   margin-left: 24px;
@@ -456,6 +498,8 @@ html {
 .contacts__number-link {
   text-decoration: none;
   color: #1B1C21; }
+  .contacts__number-link:hover {
+    opacity: 0.8; }
 
 .content-wrap {
   position: relative;
@@ -522,10 +566,13 @@ html {
   .header__cps-logo {
     background: url(./static/logo.png) no-repeat;
     width: 97px;
-    height: 51px; }
+    height: 51px;
+    transition: all 0.3s; }
     @media (min-width: 768px) {
       .header__cps-logo {
         order: 2; } }
+    .header__cps-logo:hover {
+      transform: scale(0.9); }
   .header__icon {
     width: 40px;
     height: 40px;
@@ -620,12 +667,6 @@ html {
     @media (min-width: 1120px) {
       .main__content {
         margin-bottom: 50px; } }
-  .main__wrap {
-    max-width: 1120px; }
-    @media (min-width: 1120px) {
-      .main__wrap--centered {
-        margin-left: auto;
-        margin-right: auto; } }
 
 @media (min-width: 768px) {
   .caption {
@@ -651,7 +692,8 @@ html {
   display: none; }
   @media (min-width: 1120px) {
     .caption__buttons {
-      display: flex; } }
+      display: flex;
+      margin-right: 30px; } }
 
 .caption__button {
   cursor: pointer; }
@@ -666,20 +708,15 @@ html {
 .caption__link {
   font-family: "TT Lakes Medium", "Arial", sans-serif;
   font-weight: 500;
-  background: linear-gradient(to bottom, #ff9800 0%, #ff9800 100%);
-  background-position: 0 100%;
-  background-size: 0 0;
-  background-repeat: repeat-x;
   transition: all 0.2s; }
   @media (min-width: 1120px) {
     .caption__link {
       display: flex;
       align-items: center;
-      margin-right: 10px;
       text-decoration: none;
       color: #1B1C21; } }
   .caption__link:hover {
-    background-size: 4px 100%; }
+    opacity: 0.8; }
 
 .caption__icon {
   width: 40px;
@@ -738,13 +775,16 @@ html {
       .description__wrap {
         margin-left: 34px; } }
   .description__text {
-    height: 90px;
     overflow-y: hidden;
     margin-bottom: 16px; }
     @media (min-width: 768px) {
       .description__text {
-        height: 160px;
         margin-bottom: 10px; } }
+    .description__text--cut {
+      height: 90px; }
+      @media (min-width: 768px) {
+        .description__text--cut {
+          height: 160px; } }
   .description__paragraph {
     margin-bottom: 16px;
     font-size: 14px;
@@ -760,6 +800,8 @@ html {
     background: transparent;
     margin-bottom: 16px;
     cursor: pointer; }
+    .description__button:hover {
+      opacity: 0.8; }
     .description__button::before {
       content: '';
       background-image: url(./static/down_arrows.png);
@@ -771,12 +813,20 @@ html {
       position: relative;
       float: left;
       margin-right: 16px;
-      top: 3px; }
-  .description__image {
+      top: 3px;
+      transition: all 0.3s; }
+    .description__button--hide::before {
+      transform: rotate(180deg); }
+  .description__image-wrap {
+    flex-grow: 1;
     min-height: 176px;
     max-height: 307px;
-    max-width: 531px;
-    flex-grow: 1; }
+    max-width: 511px; }
+    @media (min-width: 768px) {
+      .description__image-wrap {
+        margin-right: 24px; } }
+  .description__image {
+    width: 100%; }
     @media (min-width: 768px) {
       .description__image {
         border-radius: 6px; } }
@@ -898,6 +948,8 @@ html {
     @media (min-width: 1120px) {
       .brand__button {
         margin-left: 39px; } }
+    .brand__button:hover {
+      opacity: 0.8; }
     .brand__button::before {
       content: '';
       background: url(./static/down_arrows.png) no-repeat center center;
@@ -1037,6 +1089,8 @@ html {
     @media (min-width: 1120px) {
       .device__button {
         margin-left: 39px; } }
+    .device__button:hover {
+      opacity: 0.8; }
     .device__button::before {
       content: '';
       background: url(./static/down_arrows.png) no-repeat center center;
@@ -1313,6 +1367,8 @@ html {
     @media (min-width: 1120px) {
       .price__button {
         margin-left: 39px; } }
+    .price__button:hover {
+      opacity: 0.8; }
     .price__button::before {
       content: '';
       background: url(./static/down_arrows.png) no-repeat center center;
@@ -1358,6 +1414,8 @@ html {
       .price__commercial-offer {
         margin-left: 32px;
         margin-bottom: 50px; } }
+    .price__commercial-offer:hover {
+      opacity: 0.8; }
     .price__commercial-offer::after {
       content: '';
       background-image: url(./static/go.png);
