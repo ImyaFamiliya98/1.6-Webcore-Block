@@ -1,133 +1,62 @@
 //swipers
-import { swiperPrice } from './swipers/swiperPrice';
-import { swiperBrand } from './swipers/swiperBrand';
-import { swiperDevice } from './swipers/swiperDevice';
+import './src/swipers/swiperPrice';
+import './src/swipers/swiperBrand';
+import './src/swipers/swiperDevice';
+
+//swipers functional
+import './src/swipers/swipersSeeMore'
 
 //modals
-import { modalCall } from "./modals/modalCall";
-import { modalFeedback } from "./modals/modalFeedback";
+import { modalCall } from "./src/modals/modalCall";
+import { modalFeedback } from "./src/modals/modalFeedback";
+import { mobileMenu } from "./src/modals/mobileMenu";
 
 //blur
-import { disableBlurEffect, enableBlurEffect } from "./blur/blur-effect";
+import { disableBlurEffect, enableBlurEffect, blurElement } from "./src/blur/blur-effect";
 
-//body_scroll
-import { body, toggleOffBodyScroll, toggleOnBodyScroll } from "./body_scroll/body_scroll";
-
-swiperPrice.init();
-swiperBrand.init();
-swiperDevice.init();
-
-const addSeeMoreButtonClickHandler = (swiperClass) => {
-  const swiperButtonClass = (swiperClass + '__button').slice(1);
-  const swiperButtonEl = document.querySelector('.' + swiperButtonClass);
-  const swiperButtonClasses = swiperButtonEl.classList;
-
-    swiperButtonEl.addEventListener('click', function () {
-    const swiperWrapper = document.querySelector(swiperClass + '__wrapper');
-    const swiperWrapperClasses = swiperWrapper.classList;
-    const swiperWrapperCut = (swiperClass + '__wrapper--cut').slice(1);
-
-    if (swiperWrapperClasses.contains(swiperWrapperCut)) {
-      swiperButtonClasses.remove(swiperButtonClass + '--show');
-      swiperButtonClasses.add(swiperButtonClass + '--hide');
-      swiperButtonEl.textContent = 'Скрыть';
-      swiperWrapperClasses.remove(swiperWrapperCut);
-    } else {
-      swiperButtonClasses.remove(swiperButtonClass + '--hide');
-      swiperButtonClasses.add(swiperButtonClass + '--show');
-      swiperButtonEl.textContent = 'Показать все';
-      swiperWrapperClasses.add(swiperWrapperCut);
-    }
-  });
-};
-
-const blurEffect = '.blur-effect';
-
-let brand, device;
-
-const swipersClass = [
-  brand = {
-    class: '.brand'
-  },
-  device = {
-    class: '.device'
-  }
-];
-
-for (let i = 0; i < swipersClass.length; i++) {
-  const swiperClass = swipersClass[i].class;
-  addSeeMoreButtonClickHandler(swiperClass);
-}
+//other
+import './src/otherFeatures/descriptionSeeMore';
+import './src/otherFeatures/menuItemClick';
 
 const addShowModalButtonClickHandler = (modal, elementNumber) => {
   const modalButton = modal.modalShowButtons[elementNumber];
 
   modalButton.addEventListener('click', () => {
+    closeAllModal();
     modal.showModalWindow();
-    enableBlurEffect(blurEffect);
-    addBlurListener(modal.modalWindow);
-    toggleOnBodyScroll();
+    enableBlurEffect();
   });
 };
-
-for (let i = 0; i < modalCall.modalShowButtons.length; i++) {
-  addShowModalButtonClickHandler(modalCall, i);
-}
-
-for (let i = 0; i < modalFeedback.modalShowButtons.length; i++) {
-  addShowModalButtonClickHandler(modalFeedback, i);
-}
-
-const modals = [modalCall, modalFeedback];
 
 const addHideModalsButtonClickHandler = (modal) => {
   modal.modalCloseButton.addEventListener('click', function() {
     modal.closeModalWindow();
-    disableBlurEffect(blurEffect);
-    toggleOffBodyScroll();
+    disableBlurEffect();
   });
 };
+
+const modals = [modalCall, modalFeedback, mobileMenu];
+
+for (let i = 0; i < modals.length; i++) {
+  const modal = modals[i];
+
+  for (let j = 0; j < modal.modalShowButtons.length; j++) {
+    addShowModalButtonClickHandler(modal, j);
+  }
+}
 
 for (let i = 0; i < modals.length; i++) {
   addHideModalsButtonClickHandler(modals[i]);
 }
 
-const mobileMenu = document.querySelector('.mobile-menu');
-const openMobileMenuButton = document.querySelector('#header__open-mobile-menu-button');
-
-openMobileMenuButton.addEventListener('click', function () {
-  mobileMenu.classList.remove('mobile-menu--hidden');
-  enableBlurEffect(blurEffect);
-  addBlurListener(mobileMenu);
-  toggleOnBodyScroll();
+blurElement.addEventListener('click', function () {
+  closeAllModal();
+  disableBlurEffect();
 });
 
-const closeMobileMenuButton = mobileMenu.querySelector('#mobile-menu__header-close-button');
-
-closeMobileMenuButton.addEventListener('click', function () {
-  mobileMenu.classList.add('mobile-menu--hidden');
-  disableBlurEffect(blurEffect);
-  toggleOffBodyScroll();
-});
-
-const addBlurListener = (modal) => {
-  const blurEffectEl = document.querySelector(blurEffect);
-
-  blurEffectEl.addEventListener('click', function () {
-    disableBlurEffect(blurEffect);
-    modal.classList.add(modal.classList[0] + '--hidden');
-    toggleOffBodyScroll();
-  });
-}
-
-(function init() {
+const closeAllModal = () => {
   for (let i = 0; i < modals.length; i++) {
-    modals[i].closeModalWindow();
+    const modal = modals[i];
+    modal.closeModalWindow();
   }
-
-  if (!mobileMenu.classList.contains('mobile-menu--hidden')) {
-    mobileMenu.classList.add('mobile-menu--hidden');
-  }
-
-  disableBlurEffect(blurEffect);
-}) ()
+};

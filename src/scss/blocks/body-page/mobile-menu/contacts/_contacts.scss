@@ -18,6 +18,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     margin-right: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &--call {
       background-image: url('../img/call.png');
@@ -42,6 +48,10 @@
     font-family: $font-family-medium;
     font-weight: $font-weight-medium;
     color: $text-color;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__number {
@@ -57,5 +67,9 @@
   &__number-link {
     text-decoration: none;
     color: $text-color;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

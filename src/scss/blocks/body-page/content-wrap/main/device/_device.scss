@@ -166,6 +166,10 @@
       margin-left: 39px;
     }
 
+    &:hover {
+      opacity: 0.8;
+    }
+
     &::before {
       content: '';
       background: url("../img/down_arrows.png") no-repeat center center;

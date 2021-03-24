@@ -28,6 +28,7 @@
 
     @media (min-width: $screen-desktop) {
       display: flex;
+      margin-right: 30px;
     }
   }
 
@@ -47,22 +48,17 @@
   &__link {
     font-family: $font-family-medium;
     font-weight: $font-weight-medium;
-    background: linear-gradient(to bottom, #ff9800 0%, #ff9800 100%);
-    background-position: 0 100%;
-    background-size: 0 0;
-    background-repeat: repeat-x;
     transition: all 0.2s;
 
     @media (min-width: $screen-desktop) {
       display: flex;
       align-items: center;
-      margin-right: 10px;
       text-decoration: none;
       color: $text-color;
     }
 
     &:hover {
-      background-size: 4px 100%;
+      opacity: 0.8;
     }
   }
 

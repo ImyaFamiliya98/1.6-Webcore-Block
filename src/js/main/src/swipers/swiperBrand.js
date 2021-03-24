@@ -1,8 +1,10 @@
 import Swiper from './swiper.bundle.min.js';
+import {swiperPrice} from "./swiperPrice";
+import {swiperDevice} from "./swiperDevice";
 
-export let swiperPrice = new Swiper('.price__container', {
+export let swiperBrand = new Swiper('.brand__container', {
   pagination: {
-    el: '.price__pagination',
+    el: '.brand__pagination',
   },
   slidesPerView: 'auto',
   spaceBetween: 16,
@@ -23,10 +25,10 @@ export let swiperPrice = new Swiper('.price__container', {
   }
 });
 
-swiperPrice.on('beforeResize', function() {
-  if (swiperPrice.isBeginning === false && document.documentElement.clientWidth >= 768) {
-    swiperPrice.slideTo(0);
-    swiperPrice.destroy();
+swiperBrand.on('beforeResize', function() {
+  if (swiperBrand.isBeginning === false && document.documentElement.clientWidth >= 768) {
+    swiperBrand.slideTo(0);
   }
 });
 
+swiperBrand.init();

@@ -65,15 +65,4 @@
       margin-bottom: 50px;
     }
   }
-
-  &__wrap {
-    max-width: 1120px;
-
-    &--centered {
-      @media (min-width: $screen-desktop) {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  }
 }

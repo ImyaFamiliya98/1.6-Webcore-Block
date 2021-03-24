@@ -18,13 +18,19 @@
   }
 
   &__text {
-    height: 90px;
     overflow-y: hidden;
     margin-bottom: 16px;
 
     @media (min-width: $screen-tablet) {
-      height: 160px;
       margin-bottom: 10px;
+    }
+
+    &--cut {
+      height: 90px;
+
+      @media (min-width: $screen-tablet) {
+        height: 160px;
+      }
     }
   }
 
@@ -47,6 +53,10 @@
     margin-bottom: 16px;
     cursor: pointer;
 
+    &:hover {
+      opacity: 0.8;
+    }
+
     &::before {
       content: '';
       background-image: url("../img/down_arrows.png");
@@ -59,14 +69,29 @@
       float: left;
       margin-right: 16px;
       top: 3px;
+      transition: all 0.3s;
+    }
+
+    &--hide {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__image-wrap {
+    flex-grow: 1;
+    min-height: 176px;
+    max-height: 307px;
+    max-width: 511px;
+
+    @media (min-width: $screen-tablet) {
+      margin-right: 24px;
     }
   }
 
   &__image {
-    min-height: 176px;
-    max-height: 307px;
-    max-width: 531px;
-    flex-grow: 1;
+    width: 100%;
 
     @media (min-width: $screen-tablet) {
       border-radius: 6px;

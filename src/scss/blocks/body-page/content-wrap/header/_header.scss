@@ -75,9 +75,14 @@
     background: url("../img/logo.png") no-repeat;
     width: 97px;
     height: 51px;
+    transition: all 0.3s;
 
     @media (min-width: $screen-tablet) {
       order: 2;
+    }
+
+    &:hover {
+      transform: scale(0.9);
     }
   }
 

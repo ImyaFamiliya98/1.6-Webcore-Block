@@ -1,4 +1,6 @@
 import Swiper from './swiper.bundle.min.js';
+import {swiperPrice} from "./swiperPrice";
+import {swiperBrand} from "./swiperBrand";
 
 export let swiperDevice = new Swiper('.device__container', {
   pagination: {
@@ -28,3 +30,5 @@ swiperDevice.on('beforeResize', function() {
     swiperDevice.slideTo(0);
   }
 });
+
+swiperDevice.init();

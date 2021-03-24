@@ -15,10 +15,6 @@
     box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   }
 
-  @media (min-height: $screen-tablet) {
-    height: 100vh;
-  }
-
   @media (min-width: $screen-xl) {
     position: static;
     transform: translate(0);
@@ -68,6 +64,7 @@
       background-repeat: no-repeat;
       background-position: center center;
       transition: all 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.1);
@@ -100,7 +97,12 @@
   &__cps-logo {
     width: 97px;
     height: 51px;
+    transition: all 0.3s;
     background-image: url('../img/logo.png');
+
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 
   &__navigation {
@@ -132,6 +134,10 @@
     background-color: $background-color-mobile-menu;
     text-transform: uppercase;
     cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     &--active {
       color: $text-color--muted;
