@@ -1,3 +1,5 @@
+//TODO: refactoring blur effect
+
 //swipers
 import './src/swipers/swiperPrice';
 import './src/swipers/swiperBrand';
@@ -22,7 +24,10 @@ const addShowModalButtonClickHandler = (modal, elementNumber) => {
   const modalButton = modal.modalShowButtons[elementNumber];
 
   modalButton.addEventListener('click', () => {
-    closeAllModal();
+    //closeAllModal();
+    if (mobileMenu.isVisible) {
+      blurElement.classList.add('blur-effect--over-mobile');
+    }
     modal.showModalWindow();
     enableBlurEffect();
   });
@@ -31,7 +36,10 @@ const addShowModalButtonClickHandler = (modal, elementNumber) => {
 const addHideModalsButtonClickHandler = (modal) => {
   modal.modalCloseButton.addEventListener('click', function() {
     modal.closeModalWindow();
-    disableBlurEffect();
+    blurElement.classList.remove('blur-effect--over-mobile');
+    if (!mobileMenu.isVisible) {
+      disableBlurEffect();
+    }
   });
 };
 
@@ -51,6 +59,7 @@ for (let i = 0; i < modals.length; i++) {
 
 blurElement.addEventListener('click', function () {
   closeAllModal();
+  blurElement.classList.remove('blur-effect--over-mobile');
   disableBlurEffect();
 });
 

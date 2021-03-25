@@ -30,7 +30,7 @@ $border-color: #B8FFEC;
     font-weight: $font-weight-medium;
     text-decoration: none;
 
-    &:hover {
+    &--mouse-hover {
       filter: drop-shadow(0 0 5px #1868ae);
     }
   }
