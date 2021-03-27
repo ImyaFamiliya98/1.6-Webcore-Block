@@ -4,6 +4,8 @@
   right: 0;
   z-index: 11;
   height: 100%;
+  transition: all 0.3s;
+  transform: translate(0);
 
   &-wrap {
     padding: 24px 16px;
@@ -12,7 +14,6 @@
     width: 320px;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s;
     overflow-y: scroll;
 
     @media (min-width: $screen-tablet) {
