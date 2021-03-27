@@ -2,24 +2,28 @@
   position: fixed;
   top: 0;
   right: 0;
-  padding: 24px 16px;
-  background-color: $background-color-mobile-menu;
-  height: 100%;
-  width: 320px;
-  display: flex;
-  flex-direction: column;
   z-index: 11;
-  transition: all 0.3s;
-  overflow-y: scroll;
+  height: 100%;
 
-  @media (min-width: $screen-tablet) {
-    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
-  }
+  &-wrap {
+    padding: 24px 16px;
+    background-color: $background-color-mobile-menu;
+    height: 100%;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    overflow-y: scroll;
 
-  @media (min-width: $screen-xl) {
-    padding: 40px 32px;
-    width: 440px;
-    overflow-y: auto;
+    @media (min-width: $screen-tablet) {
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 40px 32px;
+      width: 440px;
+      overflow-y: auto;
+    }
   }
 
   &--hidden {
@@ -33,6 +37,7 @@
 
   &__icon {
     width: 40px;
+    min-height: 40px;
     height: 40px;
     border: none;
     border-radius: 50%;
